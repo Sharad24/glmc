@@ -2,6 +2,8 @@
 
 #include "math.h"
 
+typedef float vec4f[4];
+
 inline void glmc_vec4f_from_2f(vec4f dest, vec2f src_a, float src_b, float src_c)
 {
     dest[0] = src_a[0];

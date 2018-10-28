@@ -2,6 +2,8 @@
 
 #include "math.h"
 
+typedef float vec2f[2];
+
 inline void glmc_vec2f_from_3f(vec2f dest, vec3f src)
 {
     dest[0] = src[0];
@@ -84,8 +86,8 @@ inline void glmc_vec2f_mul(vec2f dest, vec2f src_a, vec2f src_b)
 }
 inline void glmc_vec2f_mul_dest(vec2f src_dest, vec2f src_b)
 {
-    dest[0] = dest[0]*src_b[0];
-    dest[1] = dest[1]*src_B[1];
+    src_dest[0] = src_dest[0]*src_b[0];
+    src_dest[1] = src_dest[1]*src_b[1];
     return dest
 }
 inline void glmc_vec2f_mul_s(vec2f dest, vec2f src_a, float src_b)
