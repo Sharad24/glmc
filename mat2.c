@@ -94,9 +94,21 @@ inline void glmc_mat2f_div_dest(mat2f src_dest, mat2f src)
     glmc_mat2f_mul(src_dest, src_dest, src);
 }
 
-inline void glmc_mat2f_transpose(mat2f src, mat2f dest)
+inline void glmc_mat2f_transpose(mat2f dest, mat2f src)
 {
-    dest = src
-    dest[0][1] = src[1][0]
-    dest[1][0] = src[0][1]
+    dest = src;
+    dest[0][1] = src[1][0];
+    dest[1][0] = src[0][1];
+}
+
+inline void glmc_mat2f_mul_add(mat2f dest, mat2f src_a, mat2f src_b)
+{
+    glmc_mat2f_mul_dest(src_a, src_b);
+    glmc_mat2f_add_dest(dest, src_a);
+}
+
+inline void glmc_mat2f_mul_add(mat2f dest, mat2f src_a, mat2f src_b)
+{
+    glmc_mat2f_mul_dest(src_a, src_b);
+    glmc_mat2f_sub_dest(dest, src_a);
 }
